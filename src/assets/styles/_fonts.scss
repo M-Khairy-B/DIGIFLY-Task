@@ -1,0 +1,15 @@
+html {
+	-ms-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
+	text-rendering: optimizelegibility;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	font-size: (100vw / 1440px) * 10px;
+	&[dir='ltr'] {
+		font-family: var(--primary-font-en);
+	}
+
+	&[dir='rtl'] {
+		font-family: var(--primary-font-ar);
+	}
+}

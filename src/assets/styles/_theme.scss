@@ -1,0 +1,60 @@
+:root {
+    --primary-font-en: Inter;
+    --primary-font-ar: Cairo;
+    --_white: #fff;
+    --_black: #000;
+    --_red: red;
+    --_bgColor: #fcfcfe;
+}
+
+[data-theme='dark'] {
+}
+
+$colors: _white, _black, _bgColor, _red;
+
+@each $color in $colors {
+    .c#{$color} {
+        color: var(--#{$color});
+    }
+    .bg-c#{$color} {
+        background-color: var(--#{$color});
+    }
+    .b-c#{$color} {
+        border-color: var(--#{$color});
+    }
+    .fill-c#{$color} {
+        path,
+        rect {
+            fill: var(--#{$color});
+        }
+    }
+    .stroke-c#{$color} {
+        path,
+        rect {
+            stroke: var(--#{$color});
+        }
+    }
+
+    .h-c#{$color} {
+        &:hover {
+            color: var(--#{$color});
+        }
+    }
+    .h-bg-c#{$color} {
+        &:hover {
+            background-color: var(--#{$color});
+        }
+    }
+    .h-c#{$color} {
+        &:hover {
+            border-color: var(--#{$color});
+        }
+    }
+    .h-fill-c#{$color} {
+        &:hover {
+            path {
+                fill: var(--#{$color});
+            }
+        }
+    }
+}
