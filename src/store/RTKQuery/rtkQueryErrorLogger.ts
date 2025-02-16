@@ -6,15 +6,9 @@ export const rtkQueryErrorLogger: Middleware =
     (api: MiddlewareAPI) => (next) => (action) => {
         if (isRejectedWithValue(action)) {
             if (typeof document !== 'undefined') {
-                if ((action.payload as any).data?.Message) {
-                    notification.error({
-                        message: (action.payload as any).data?.Message,
-                    });
-                } else {
-                    notification.error({
-                        message: (action.payload as any).data?.Message,
-                    });
-                }
+                notification.error({
+                    message: 'An error occurred. Please try again later.',
+                });
             }
         }
         return next(action);
